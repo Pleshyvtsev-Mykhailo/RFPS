@@ -1,0 +1,129 @@
+main {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+}
+ 
+br {
+    display: none;
+}
+ 
+form {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: var(--panel);
+    border: 1px solid hsl(215, 60%, 35%);
+    border-radius: 0.8rem;
+}
+ 
+form p {
+    margin: 0;
+}
+
+.personal {
+    order: 1;
+    flex: 2 1 22rem;
+    margin: 0;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--accent);
+    border-radius: 0.5rem;
+}
+ 
+.purpose {
+    order: 2;
+    flex: 1 1 14rem;
+    align-self: center;
+}
+ 
+.details {
+    order: 3;
+    flex: 1 1 100%;
+}
+
+.consent {
+    order: 4;
+    flex: 1 1 18rem;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+ 
+.actions {
+    order: 5;
+    flex: 0 0 auto;
+    display: flex;
+    gap: 0.75rem;
+}
+ 
+legend {
+    padding: 0 0.5rem;
+    font-family: "Exo 2", "Trebuchet MS", sans-serif;
+    font-weight: 600;
+    color: var(--accent);
+}
+ 
+fieldset p {
+    margin-bottom: 1rem;
+}
+ 
+fieldset p:last-of-type {
+    margin-bottom: 0;
+}
+ 
+label {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-weight: 500;
+}
+ 
+.consent label {
+    display: inline;
+    margin: 0;
+}
+ 
+input:not([type="checkbox"]),
+select,
+textarea {
+    width: 100%;
+    padding: 0.55rem 0.75rem;
+    font: inherit;
+    color: var(--text);
+    background: rgba(7, 11, 22, 0.7);
+    border: 1px solid hsl(215, 40%, 40%);
+    border-radius: 0.4rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+ 
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px hsla(200, 90%, 62%, 0.3);
+}
+ 
+input[type="checkbox"] {
+    width: 1.1rem;
+    height: 1.1rem;
+    accent-color: var(--accent);
+}
+ 
+textarea {
+    min-height: 8rem;
+    resize: vertical;
+}
+ 
+::placeholder {
+    color: hsl(215, 20%, 60%);
+}
+ 
+button[type="reset"] {
+    color: var(--text);
+    background: transparent;
+}

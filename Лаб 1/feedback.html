@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>АстроІнфо — Зворотній зв'язок</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+ 
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/feedback.css">
+
 </head>
 <body>
 
@@ -25,7 +33,7 @@
 
         <form action="#" method="post">
             
-            <fieldset>
+            <fieldset class="personal">
                 <legend>Персональна інформація</legend>
                 
                 <p>
@@ -57,7 +65,7 @@
 
             <br>
 
-            <p>
+            <p class="purpose">
                 <label for="purpose">5. Мета зворотнього зв'язку:</label><br>
                 <select id="purpose" name="purpose" required>
                     <option value="cooperation">співпраця</option>
@@ -67,26 +75,22 @@
                 </select>
             </p>
 
-            <p>
+            <p class="details">
                 <label for="details">6. Детально (макс. 500 символів):</label><br>
                 <textarea id="details" name="details" rows="6" cols="50" maxlength="500" placeholder="Введіть ваш текст тут..." required></textarea>
             </p>
 
-            <p>
+            <p class="consent">
                 <input type="checkbox" id="consent" name="consent" required>
                 <label for="consent">Я надаю згоду на обробку моїх персональних даних</label>
             </p>
 
-            <p>
+            <p class="actions">
                 <button type="submit">Надіслати</button>
                 <button type="reset">Скинути</button>
             </p>
 
         </form>
-
-        <p>
-            <a href="index.html"><button type="button">Повернутися на Головну сторінку</button></a>
-        </p>
     </main>
 
     <footer>

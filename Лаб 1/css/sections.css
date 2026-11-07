@@ -1,0 +1,95 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+body {
+    padding-top: var(--header-h);
+}
+ 
+a:link {
+    color: var(--accent);
+}
+ 
+a:visited {
+    color: #ffd600;
+}
+ 
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 1.75rem;
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+}
+ 
+main > h2,
+main > form {
+    grid-column: 1 / -1;
+}
+ 
+main > h2 {
+    margin: 0;
+}
+ 
+main > form {
+    justify-self: start;
+}
+ 
+main > hr {
+    display: none;
+}
+ 
+article {
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    gap: 0.75rem;
+    padding: 1rem;
+    color: #0b1230;
+    background: #eaf0ff;
+    border: 6px double darkblue;
+    border-bottom: medium solid darkblue;
+}
+ 
+article h3 {
+    margin: 0;
+    color: darkblue;
+}
+ 
+article p {
+    margin: 0;
+}
+
+article img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 0.3rem;
+}
+
+article img:hover {
+    animation-name: vintage;
+    animation-duration: 0.8s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes vintage {
+    from { filter: none; }
+    to   { filter: sepia(1) contrast(0.9) brightness(0.85); }
+}
+
+.author {
+    font-size: 0.8rem;
+    font-weight: 300;
+    font-style: italic;
+}
+ 
+.author b {
+    font-weight: inherit;
+}

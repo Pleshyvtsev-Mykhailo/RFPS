@@ -4,6 +4,185 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>АстроІнфо — Головна сторінка</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+        }
+ 
+        body {
+            padding-top: var(--header-h);
+        }
+ 
+        .quick-nav {
+            float: left;
+            margin: 1rem 0 1rem 2rem;
+        }
+ 
+        .external-links {
+            float: right;
+            margin: 1rem 2rem 1rem 0;
+        }
+ 
+        main {
+            clear: both;
+            max-width: 72rem;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+ 
+        a[href^="#"] {
+            border-bottom: 1px dashed var(--accent);
+        }
+ 
+        a[href*="wikipedia"] {
+            font-weight: 500;
+        }
+ 
+        a[target="_blank"]::after {
+            content: " ↗";
+        }
+ 
+        #about {
+            margin: 3rem 2.5rem;
+            padding: 1rem;
+            background: var(--panel);
+            border: 1px solid hsl(215, 60%, 35%);
+            border-radius: 0.6rem;
+        }
+ 
+        #about > h2 {
+            margin-top: 0;
+        }
+ 
+        #about > h2 + p::first-line {
+            font-style: italic;
+        }
+ 
+        #about h3 ~ ul {
+            padding-left: 1.5rem;
+        }
+ 
+        #about li::marker {
+            color: var(--accent);
+        }
+ 
+        main > article {
+            margin: 0 2.5rem;
+        }
+ 
+        #info {
+            position: relative;
+            z-index: 1;
+            margin: 3rem 2.5rem;
+            padding: 1rem;
+            max-height: 19rem;
+            overflow: auto;
+            background: var(--panel);
+            border: 1px solid hsl(215, 60%, 35%);
+            border-radius: 0.6rem;
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+            transition: transform 0.4s ease,
+                        background-color 0.4s ease,
+                        border-color 0.4s ease,
+                        box-shadow 0.4s ease;
+        }
+ 
+        #info:hover {
+            transform: translateY(3%);
+            background-color: rgba(94, 200, 255, 0.1);
+            border-color: var(--accent);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+ 
+        #info > h2 {
+            margin-top: 0;
+        }
+ 
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+ 
+        caption {
+            padding-bottom: 0.5rem;
+            font-family: "Exo 2", "Trebuchet MS", sans-serif;
+            text-align: left;
+        }
+ 
+        th,
+        td {
+            padding: 0.5rem 0.75rem;
+            text-align: left;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+ 
+        thead th,
+        tfoot th {
+            background: hsl(215, 60%, 20%);
+        }
+ 
+        tbody tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.04);
+        }
+ 
+        .contact {
+            width: fit-content;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.3rem;
+            color: var(--text);
+            background: linear-gradient(90deg, lightgreen, green) no-repeat;
+            background-size: 0% 100%;          /* градієнт є, але має нульову ширину */
+            transition: background-size 0.3s ease, color 0.3s ease;
+        }
+ 
+        .contact:focus {
+            color: black;
+            background-size: 100% 100%;
+            transition: background-size 1s ease 3s, color 1s ease 3s;
+        }
+ 
+        aside {
+            position: fixed;
+            right: 1.5rem;
+            bottom: 1.5rem;
+            z-index: 50;
+            width: 16rem;
+            padding: 1rem;
+            background: rgba(7, 11, 22, 0.92);
+            border: 1px solid var(--accent);
+            border-radius: 0.6rem;
+            animation: glow 3s ease-in-out infinite;
+        }
+ 
+        aside h3 {
+            margin-top: 0;
+        }
+ 
+        aside p {
+            margin-bottom: 0;
+        }
+ 
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 0 4px hsla(200, 90%, 62%, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 18px hsla(200, 90%, 62%, 0.8);
+            }
+        }
+    </style>
+
 </head>
 <body>
 
@@ -21,10 +200,10 @@
         </nav>
     </header>
 
-    <p>
+    <p class="quick-nav">
         Швидка навігація: <a href="#about">Про нас</a> | <a href="#contacts">Контакти</a>
     </p>
-    <p>
+    <p class="external-links">
         Зовнішні джерела: 
         <a href="https://www.nasa.gov/" target="_blank">Офіційний сайт NASA</a> | 
         <a href="https://uk.wikipedia.org/" target="_blank">Українська Вікіпедія</a>
@@ -50,7 +229,7 @@
             </p>
         </article>
 
-        <section>
+        <section id="info">
             <h2>Інформація про предметну область та авторів</h2>
             <table border="1" cellpadding="8" cellspacing="0">
                 <caption>Таблиця 1. Розділи енциклопедії та їх автори</caption>
@@ -125,8 +304,8 @@
     <footer id="contacts">
         <hr>
         <p><b>Контактна інформація:</b></p>
-        <p>Адреса: м. Київ, просп. Академіка Глушкова, 4Б</p>
-        <p>Телефони: +380 (44) 123-45-67, +380 (44) 765-43-21</p>
+        <p class="contact" tabindex="0">Адреса: м. Київ, просп. Академіка Глушкова, 4Б</p>
+        <p class="contact" tabindex="0">Телефони: +380 (44) 123-45-67, +380 (44) 765-43-21</p>
         <p>&copy; 2026 Тематична Онлайн енциклопедія "АстроІнфо"</p>
     </footer>
 

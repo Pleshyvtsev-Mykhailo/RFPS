@@ -1,0 +1,148 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+ 
+:root {
+    --bg-dark: #070b16;
+    --panel: rgba(255, 255, 255, 0.06);
+    --accent: hsl(200, 90%, 62%);
+    --text: #e6ecff;
+    --header-h: 10.5rem;
+}
+ 
+html {
+    scroll-behavior: smooth;
+}
+ 
+body {
+    margin: 0;
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--bg-dark) radial-gradient(ellipse at top, #16275a 0%, var(--bg-dark) 65%) no-repeat fixed;
+}
+ 
+
+h1,
+h2,
+h3 {
+    font-family: "Exo 2", "Trebuchet MS", sans-serif;
+    font-weight: 600;
+    line-height: 1.25;
+}
+ 
+h1 {
+    font-size: 1.6rem;
+    margin: 0;
+}
+ 
+h2 {
+    font-size: 1.5rem;
+    color: var(--accent);
+}
+ 
+h3 {
+    font-size: 1.15rem;
+}
+ 
+header {
+    padding: 0.75rem 2rem;
+    background: linear-gradient(90deg, #0b1533, #10224d);
+    border-bottom: 2px solid var(--accent);
+}
+ 
+header img {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 1rem;
+    transition: transform 0.4s ease;
+}
+ 
+header img:hover {
+    transform: rotate(-6deg) scale(1.08);
+}
+ 
+header h1 {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: calc(100% - 170px);
+}
+ 
+nav ul {
+    margin: 0.5rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+ 
+nav li {
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+ 
+nav a {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+ 
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent);
+    text-decoration: none;
+}
+ 
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+ 
+a:hover {
+    text-decoration: underline;
+}
+ 
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+}
+ 
+img {
+    max-width: 100%;
+    height: auto;
+}
+ 
+hr {
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+ 
+::selection {
+    color: var(--bg-dark);
+    background: var(--accent);
+}
+ 
+button {
+    padding: 0.6rem 1.2rem;
+    font: inherit;
+    font-weight: 500;
+    color: var(--bg-dark);
+    background: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 0.4rem;
+    cursor: pointer;
+    transition: filter 0.3s ease;
+}
+ 
+button:hover {
+    filter: brightness(1.15);
+}
+ 
+footer {
+    margin-top: 3rem;
+    padding: 1.5rem 2rem;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
